@@ -4,10 +4,8 @@ import { Navbar, Badge } from 'react-bootstrap';
 class NavBar extends React.Component {
 
     state = {
-        badgeCount: 0  
+        badgeCount: 0
     }
-
-
 
     render() {
 
