@@ -56,16 +56,25 @@ class App extends React.Component {
 
   handleDecrement = (product) => {
     const productList = [...this.state.productList];
+
     const index = productList.indexOf(product);
     productList[index] = { ...product };
-    productList[index].value--;
+
+    if (productList[index].value > 0) {
+      productList[index].value--;
+    }
+    
     this.setState({ productList });
-  }
+  };
 
   render() {
     return (
       <div>
-        <NavBar cartItems = {this.state.productList.filter(item => item.value > 0 ).length} />
+        <NavBar
+          cartItems={
+            this.state.productList.filter((item) => item.value > 0).length
+          }
+        />
         <Products
           onReset={this.resetValue}
           productList={this.state.productList}
