@@ -19,7 +19,8 @@ class Products extends React.Component {
               <Product
                 key={product.id}
                 product={product}
-                onIncrement={()=>this.props.onIncrement(product)}     
+                onIncrement={()=>this.props.onIncrement(product)}  
+                onDecrement={()=>this.props.onDecrement(product)}   
                 deleteTag={() => this.props.onDelete(product.id)}
               />
             </ul>

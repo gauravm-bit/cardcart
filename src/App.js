@@ -54,6 +54,14 @@ class App extends React.Component {
     this.setState({ productList });
   };
 
+  handleDecrement = (product) => {
+    const productList = [...this.state.productList];
+    const index = productList.indexOf(product);
+    productList[index] = { ...product };
+    productList[index].value--;
+    this.setState({ productList });
+  }
+
   render() {
     return (
       <div>
@@ -63,6 +71,7 @@ class App extends React.Component {
           productList={this.state.productList}
           onDelete={this.deleteTag}
           onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
         />
       </div>
     );

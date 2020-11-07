@@ -17,7 +17,7 @@ class Product extends React.Component {
             {" "}
             +{" "}
           </Button>
-          <Button variant="dark m-2" size="sm">
+          <Button variant="dark m-2" size="sm" onClick={()=>{this.props.onDecrement(this.props.product)}}>
             -
           </Button>
           <Button variant="danger m-2" size="sm" onClick={this.props.deleteTag}>
